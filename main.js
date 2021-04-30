@@ -97,8 +97,8 @@ ready(function() {
     localStorage.setItem("supportTest", true);
     localStorage.removeItem("supportTest");
     console.log("localStorage is supported");
+    initDatabase();
   } catch (e) {
     console.log("localStorage is NOT supported");
   }
-  initDatabase();
 });
