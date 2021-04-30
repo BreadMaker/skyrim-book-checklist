@@ -55,10 +55,16 @@ function buildCheckList() {
       "ln": "Letters/Note",
       "j": "Journal",
       "tm": "Treasure Map"
-    };
+    },
+    shelfCounter = 0;
   for (let key in data) {
     let row = document.createElement("tr");
-    row.className = "item";
+    if (shelfCounter == 11) {
+      row.className = "item border-bottom border-primary";
+      shelfCounter = 0;
+    } else {
+      row.className = "item";
+    }
     for (let k in data[key]) {
       let item = document.createElement("td"),
         value = data[key][k],
@@ -73,7 +79,10 @@ function buildCheckList() {
           content.dataset.id = key;
           break;
         case 2:
-          content = document.createTextNode(typeList[data[key][k]]);
+          if (value.toString() == "b" || value.toString() == "sb") {
+            shelfCounter += 1;
+          }
+          content = document.createTextNode(typeList[value]);
           break;
         default:
           content = document.createTextNode(value);
