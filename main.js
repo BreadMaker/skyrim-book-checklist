@@ -82,11 +82,11 @@ function buildCheckList() {
           content = document.createTextNode(value);
       }
       item.appendChild(content);
+      row.classList.add("item");
       if (shelfCounter == 11) {
-        row.className = "item border-bottom border-primary";
+        row.classList.add("border-bottom");
+        row.classList.add("border-primary");
         shelfCounter = 0;
-      } else {
-        row.className = "item";
       }
       row.append(item);
     }
