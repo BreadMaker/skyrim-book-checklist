@@ -59,12 +59,6 @@ function buildCheckList() {
     shelfCounter = 0;
   for (let key in data) {
     let row = document.createElement("tr");
-    if (shelfCounter == 11) {
-      row.className = "item border-bottom border-primary";
-      shelfCounter = 0;
-    } else {
-      row.className = "item";
-    }
     for (let k in data[key]) {
       let item = document.createElement("td"),
         value = data[key][k],
@@ -88,6 +82,12 @@ function buildCheckList() {
           content = document.createTextNode(value);
       }
       item.appendChild(content);
+      if (shelfCounter == 11) {
+        row.className = "item border-bottom border-primary";
+        shelfCounter = 0;
+      } else {
+        row.className = "item";
+      }
       row.append(item);
     }
     container.append(row);
