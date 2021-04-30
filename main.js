@@ -25,6 +25,7 @@ function initDatabase() {
 }
 
 function addEvents() {
+  console.time("Events added");
   let checklist = document.getElementsByClassName("checklist"),
     itemlist = document.getElementsByClassName("item");
   for (var i = 0; i < checklist.length; i++) {
@@ -41,10 +42,11 @@ function addEvents() {
       }
     });
   }
+  console.timeEnd("Events added");
 }
 
 function buildCheckList() {
-  console.log("BUILD");
+  console.time("Checklist built");
   let data = JSON.parse(localStorage.getItem("database")),
     container = document.getElementById("checklist"),
     typeList = {
@@ -52,7 +54,8 @@ function buildCheckList() {
       "sb": "Skill Book",
       "st": "Spell Tome",
       "bb": "Black Book",
-      "ln": "Letters/Notes",
+      "l": "Letter",
+      "n": "Note",
       "j": "Journal",
       "tm": "Treasure Map"
     };
@@ -85,6 +88,7 @@ function buildCheckList() {
       container.append(row);
     }
   }
+  console.timeEnd("Checklist built");
   addEvents();
 }
 
