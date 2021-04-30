@@ -52,45 +52,38 @@ function buildCheckList() {
       "sb": "Skill Book",
       "st": "Spell Tome",
       "bb": "Black Book",
-      "ln": "Letters/Note",
+      "ln": "Letters/Notes",
       "j": "Journal",
       "tm": "Treasure Map"
-    },
-    shelfCounter = 0;
+    };
   for (let key in data) {
-    let row = document.createElement("tr");
-    for (let k in data[key]) {
-      let item = document.createElement("td"),
-        value = data[key][k],
-        content;
-      switch (parseInt(k)) {
-        case 0:
-          item.className = "text-center";
-          content = document.createElement("input");
-          content.type = "checkbox";
-          content.className = "checklist form-check-input";
-          content.checked = value;
-          content.dataset.id = key;
-          break;
-        case 2:
-          if (value.toString() == "b" || value.toString() == "sb") {
-            shelfCounter += 1;
-          }
-          content = document.createTextNode(typeList[value]);
-          break;
-        default:
-          content = document.createTextNode(value);
+    if (data[key][2].toString() == "b" || data[key][2].toString() == "sb") {
+      let row = document.createElement("tr");
+      for (let k in data[key]) {
+        let item = document.createElement("td"),
+          value = data[key][k],
+          content;
+        switch (parseInt(k)) {
+          case 0:
+            item.className = "text-center";
+            content = document.createElement("input");
+            content.type = "checkbox";
+            content.className = "checklist form-check-input";
+            content.checked = value;
+            content.dataset.id = key;
+            break;
+          case 2:
+            content = document.createTextNode(typeList[value]);
+            break;
+          default:
+            content = document.createTextNode(value);
+        }
+        item.appendChild(content);
+        row.classList.add("item");
+        row.append(item);
       }
-      item.appendChild(content);
-      row.classList.add("item");
-      if (shelfCounter == 11) {
-        row.classList.add("border-bottom");
-        row.classList.add("border-primary");
-        shelfCounter = 0;
-      }
-      row.append(item);
+      container.append(row);
     }
-    container.append(row);
   }
   addEvents();
 }
