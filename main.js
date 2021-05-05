@@ -31,7 +31,7 @@ function addEvents() {
   for (var i = 0; i < checklist.length; i++) {
     checklist[i].addEventListener("change", event => {
       let data = JSON.parse(localStorage.getItem("database"));
-      data[event.target.dataset.id][0] = event.target.checked;
+      data[event.target.dataset.id][1] = event.target.checked;
       localStorage.setItem("database", JSON.stringify(data));
     });
   }
@@ -60,33 +60,35 @@ function buildCheckList() {
       "tm": "Treasure Map"
     };
   for (let key in data) {
-    if (data[key][2].toString() == "b" || data[key][2].toString() == "sb") {
-      let row = document.createElement("tr");
-      for (let k in data[key]) {
-        let item = document.createElement("td"),
-          value = data[key][k],
-          content;
-        switch (parseInt(k)) {
-          case 0:
-            item.className = "text-center";
-            content = document.createElement("input");
-            content.type = "checkbox";
-            content.className = "checklist form-check-input";
-            content.checked = value;
-            content.dataset.id = key;
-            break;
-          case 2:
-            content = document.createTextNode(typeList[value]);
-            break;
-          default:
-            content = document.createTextNode(value);
-        }
+    let row = document.createElement("tr");
+    for (let k in data[key]) {
+      let item = document.createElement("td"),
+        value = data[key][k],
+        content;
+      switch (parseInt(k)) {
+        case 0:
+          break;
+        case 1:
+          item.className = "text-center";
+          content = document.createElement("input");
+          content.type = "checkbox";
+          content.className = "checklist form-check-input";
+          content.checked = value;
+          content.dataset.id = key;
+          break;
+        case 3:
+          content = document.createTextNode(typeList[value]);
+          break;
+        default:
+          content = document.createTextNode(value);
+      }
+      if (content) {
         item.appendChild(content);
         row.classList.add("item");
         row.append(item);
       }
-      container.append(row);
     }
+    container.append(row);
   }
   console.timeEnd("Checklist built");
   addEvents();
