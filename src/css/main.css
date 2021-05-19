@@ -1,0 +1,23 @@
+#menu-offcanvas-close[data-dark-mode="true"] {
+  filter: invert(1);
+}
+
+#menu-offcanvas-navbar {
+  overflow-y: scroll;
+}
+
+.offcanvas-title[data-dark-mode="true"], .navbar-brand[data-dark-mode="true"] {
+  text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+
+.offcanvas-title[data-dark-mode="false"], .navbar-brand[data-dark-mode="false"] {
+  text-shadow:
+    -1px -1px 0 #fff,
+    1px -1px 0 #fff,
+    -1px 1px 0 #fff,
+    1px 1px 0 #fff;
+}

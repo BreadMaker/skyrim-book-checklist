@@ -1,0 +1,42 @@
+{
+  "name": "skyrim-book-checklist",
+  "version": "0.1.0-alpha",
+  "description": "Companion app for keeping a list of the documents you own within Skyrim.",
+  "private": true,
+  "main": "index.html",
+  "scripts": {
+    "lint": "eslint src/js/main.js --fix",
+    "build:css": "cleancss -O1 specialComments:0 -O2 restructureRules:on -o css/main.min.css src/css/main.css",
+    "watch:css": "watch 'npm run build:css' src/css/",
+    "prebuild:js": "npm run lint",
+    "build:js": "terser src/js/main.js --mangle -o js/main.min.js --comments --ie8 --source-map \"filename='js/main.min.js.map', root='/', url='main.min.js.map'\"",
+    "watch:js": "watch 'npm run build:js' src/js/",
+    "build:html": "html-minifier --remove-comments --collapse-whitespace --minify-css --minify-js < src/html/index.html > index.html",
+    "watch:html": "watch 'npm run build:html' src/html/",
+    "build": "npm run build:css && npm run build:js && npm run build:html",
+    "build:watch": "run-p watch:**"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@gitlab.com/breadmaker/skyrim-book-checklist.git"
+  },
+  "keywords": [
+    "skyrim",
+    "book",
+    "checklist"
+  ],
+  "author": "BreadMaker",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://gitlab.com/breadmaker/skyrim-book-checklist/issues"
+  },
+  "homepage": "https://gitlab.com/breadmaker/skyrim-book-checklist#readme",
+  "devDependencies": {
+    "clean-css-cli": "^5.3.0",
+    "eslint": "^7.26.0",
+    "html-minifier": "^4.0.0",
+    "npm-run-all": "^4.1.5",
+    "terser": "^5.7.0",
+    "watch": "^0.13.0"
+  }
+}
