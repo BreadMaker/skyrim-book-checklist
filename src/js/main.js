@@ -19,10 +19,14 @@ function createDatabase(json) {
       owned: json[i][0],
       title: json[i][1],
       type: json[i][2],
-      extra1: json[i][3],
-      extra2: json[i][4],
-      dlc: json[i][5],
-      location: json[i][6]
+      variant: json[i][3],
+      skill: json[i][4],
+      school: json[i][5],
+      difficulty: json[i][6],
+      quest: json[i][7],
+      dlc: json[i][8],
+      extra: json[i][9],
+      location: json[i][10]
     });
   }
   console.log("Database created");
@@ -44,19 +48,27 @@ function initDatabase() {
 
 function addEvents() {
   console.time("Events added");
-  // let detailsModal = new bootstrap.Modal(document.getElementById("item-detail-modal")),
-  //   database = JSON.parse(localStorage.getItem("database"));
-  // Array.from(document.querySelectorAll("#checklist .list-group-item > div > div:not(.form-check-input-container)")).forEach(element => {
-  //   element.addEventListener("click", event => {
-  //     let elementData = event.currentTarget.parentElement.parentElement.dataset,
-  //       databaseEntry = database.database[elementData.id];
-  //     console.log(database);
-  //     document.getElementById("item-detail-title").textContent = "(" + elementData.type + ") " + databaseEntry.title;
-  //     detailsModal.show();
-  //     console.log("CLICK", event.currentTarget.parentElement.dataset.id);
-  //     event.preventDefault();
-  //   });
-  // });
+  let detailsModal = new bootstrap.Modal(document.getElementById("item-detail-modal"));
+  Array.from(document.querySelectorAll("#checklist .list-group-item > div > div:not(.form-check-input-container)")).forEach(element => {
+    element.addEventListener("click", event => {
+      let database = JSON.parse(localStorage.getItem("database")),
+        elementData = event.currentTarget.parentElement.parentElement.dataset,
+        databaseEntry = database.database[elementData.id];
+      document.getElementById("item-detail-title").textContent = "(" + elementData.type + ") " + databaseEntry.title;
+      document.getElementById("item-detail-variant").textContent = databaseEntry.variant;
+      document.getElementById("item-detail-dlc").textContent = databaseEntry.dlc;
+      document.getElementById("item-detail-owned").textContent = databaseEntry.owned ? "Added: " + databaseEntry.added : "Not owned yet";
+      document.getElementById("item-detail-skill").textContent = databaseEntry.skill;
+      document.getElementById("item-detail-school").textContent = databaseEntry.school;
+      document.getElementById("item-detail-difficulty").textContent = databaseEntry.difficulty;
+      document.getElementById("item-detail-quest").textContent = databaseEntry.quest;
+      document.getElementById("item-detail-extra").textContent = databaseEntry.extra;
+      document.getElementById("item-detail-location").textContent = databaseEntry.location;
+      detailsModal.show();
+      console.log("CLICK", databaseEntry);
+      event.preventDefault();
+    });
+  });
   Array.from(document.querySelectorAll("#checklist .form-check-input")).forEach(element => {
     element.addEventListener("change", event => {
       let database = JSON.parse(localStorage.getItem("database")),
@@ -257,5 +269,7 @@ ready(function() {
     }
   });
   // Misc
-  new bootstrap.Tooltip(document.getElementById("are-you-sure-checkbox-container"));
+  [].slice.call(document.querySelectorAll("[data-bs-toggle=\"tooltip\"]")).map(element => {
+    new bootstrap.Tooltip(element);
+  });
 });

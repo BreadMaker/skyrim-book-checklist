@@ -21,3 +21,76 @@
     -1px 1px 0 #fff,
     1px 1px 0 #fff;
 }
+
+#item-detail-variant:not(:empty):before {
+  content: ", ";
+}
+
+#item-detail-dlc:not(:empty):before {
+  content: "From ";
+  font-weight: initial;
+}
+
+#item-detail-dlc {
+  font-weight: bold;
+}
+
+#item-detail-dlc:not(:empty):after {
+  content: " DLC";
+  font-weight: initial;
+}
+
+#item-detail-skill:not(:empty):before {
+  content: "Increases 1 point to ";
+  font-weight: initial;
+}
+
+#item-detail-skill {
+  font-weight: bold;
+}
+
+#item-detail-skill:not(:empty):after {
+  content: " upon first read*";
+  font-weight: initial;
+}
+
+#item-detail-school:not(:empty):before {
+  content: "Spell from the ";
+  font-weight: initial;
+}
+
+#item-detail-school {
+  font-weight: bold;
+}
+
+#item-detail-school:not(:empty):after {
+  content: " school";
+  font-weight: initial;
+}
+
+#item-detail-difficulty:not(:empty):before {
+  content: ", ";
+  font-weight: initial;
+}
+
+#item-detail-difficulty {
+  font-weight: bold;
+}
+
+#item-detail-difficulty:not(:empty):after {
+  content: " difficulty";
+  font-weight: initial;
+}
+
+#item-detail-quest:not(:empty):before {
+  content: "Starts quest ";
+  font-weight: initial;
+}
+
+#item-detail-quest {
+  font-weight: bold;
+}
+
+#item-detail-location:not(:empty):before {
+  content: "Location(s) ";
+}

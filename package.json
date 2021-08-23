@@ -1,6 +1,6 @@
 {
   "name": "skyrim-book-checklist",
-  "version": "0.1.0-alpha",
+  "version": "0.2.0-alpha",
   "description": "Companion app for keeping a list of the documents you own within Skyrim.",
   "private": true,
   "main": "index.html",
