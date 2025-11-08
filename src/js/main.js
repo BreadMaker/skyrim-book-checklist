@@ -1,5 +1,4 @@
-var tmpl, bootstrap;
-
+/*global tmpl, bootstrap*/
 function ready(fn) {
   if (document.readyState != "loading") {
     fn();
@@ -143,7 +142,7 @@ function showItems(type) {
 let areYouSureModal,
   offcanvas = new bootstrap.Offcanvas(document.getElementById("menu-offcanvas"));
 
-ready(function() {
+ready(function () {
   // localStorage MUST be available
   try {
     localStorage.setItem("supportTest", true);
@@ -194,11 +193,11 @@ ready(function() {
 
   const gestureZone = document;
 
-  gestureZone.addEventListener("touchstart", function(event) {
+  gestureZone.addEventListener("touchstart", function (event) {
     touchstartX = event.changedTouches[0].screenX;
   }, false);
 
-  gestureZone.addEventListener("touchmove", function(event) {
+  gestureZone.addEventListener("touchmove", function (event) {
     touchendX = event.changedTouches[0].screenX;
     handleGesture();
   }, false);
