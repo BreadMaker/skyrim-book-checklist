@@ -1,1 +1,98 @@
-#menu-offcanvas-close[data-dark-mode=true]{filter:invert(1)}#menu-offcanvas-navbar{overflow-y:scroll}.navbar-brand[data-dark-mode=true],.offcanvas-title[data-dark-mode=true]{text-shadow:-1px -1px 0 #000,1px -1px 0 #000,-1px 1px 0 #000,1px 1px 0 #000}.navbar-brand[data-dark-mode=false],.offcanvas-title[data-dark-mode=false]{text-shadow:-1px -1px 0 #fff,1px -1px 0 #fff,-1px 1px 0 #fff,1px 1px 0 #fff}#item-detail-variant:not(:empty):before{content:", "}#item-detail-dlc:not(:empty):before{content:"From ";font-weight:initial}#item-detail-difficulty,#item-detail-dlc,#item-detail-quest,#item-detail-school,#item-detail-skill{font-weight:700}#item-detail-dlc:not(:empty):after{content:" DLC";font-weight:initial}#item-detail-skill:not(:empty):before{content:"Increases 1 point to ";font-weight:initial}#item-detail-skill:not(:empty):after{content:" upon first read*";font-weight:initial}#item-detail-school:not(:empty):before{content:"Spell from the ";font-weight:initial}#item-detail-school:not(:empty):after{content:" school";font-weight:initial}#item-detail-difficulty:not(:empty):before{content:", ";font-weight:initial}#item-detail-difficulty:not(:empty):after{content:" difficulty";font-weight:initial}#item-detail-quest:not(:empty):before{content:"Starts quest ";font-weight:initial}#item-detail-location:not(:empty):before{content:"Location(s) "}
+#menu-offcanvas-close[data-dark-mode="true"] {
+  filter: invert(1);
+}
+
+#menu-offcanvas-navbar {
+  overflow-y: scroll;
+}
+
+.offcanvas-title[data-dark-mode="true"], .navbar-brand[data-dark-mode="true"] {
+  text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+
+.offcanvas-title[data-dark-mode="false"], .navbar-brand[data-dark-mode="false"] {
+  text-shadow:
+    -1px -1px 0 #fff,
+    1px -1px 0 #fff,
+    -1px 1px 0 #fff,
+    1px 1px 0 #fff;
+}
+
+#item-detail-variant:not(:empty):before {
+  content: ", ";
+}
+
+#item-detail-dlc:not(:empty):before {
+  content: "From ";
+  font-weight: initial;
+}
+
+#item-detail-dlc {
+  font-weight: bold;
+}
+
+#item-detail-dlc:not(:empty):after {
+  content: " DLC";
+  font-weight: initial;
+}
+
+#item-detail-skill:not(:empty):before {
+  content: "Increases 1 point to ";
+  font-weight: initial;
+}
+
+#item-detail-skill {
+  font-weight: bold;
+}
+
+#item-detail-skill:not(:empty):after {
+  content: " upon first read*";
+  font-weight: initial;
+}
+
+#item-detail-school:not(:empty):before {
+  content: "Spell from the ";
+  font-weight: initial;
+}
+
+#item-detail-school {
+  font-weight: bold;
+}
+
+#item-detail-school:not(:empty):after {
+  content: " school";
+  font-weight: initial;
+}
+
+#item-detail-difficulty:not(:empty):before {
+  content: ", ";
+  font-weight: initial;
+}
+
+#item-detail-difficulty {
+  font-weight: bold;
+}
+
+#item-detail-difficulty:not(:empty):after {
+  content: " difficulty";
+  font-weight: initial;
+}
+
+#item-detail-quest:not(:empty):before {
+  content: "Starts quest ";
+  font-weight: initial;
+}
+
+#item-detail-quest {
+  font-weight: bold;
+}
+
+#item-detail-location:not(:empty):before {
+  content: "Location(s) ";
+}
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uL3NyYy9jc3MvbWFpbi5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUEiLCJmaWxlIjoibWFpbi5taW4uY3NzIiwic291cmNlc0NvbnRlbnQiOlsiI21lbnUtb2ZmY2FudmFzLWNsb3NlW2RhdGEtZGFyay1tb2RlPVwidHJ1ZVwiXSB7XG4gIGZpbHRlcjogaW52ZXJ0KDEpO1xufVxuXG4jbWVudS1vZmZjYW52YXMtbmF2YmFyIHtcbiAgb3ZlcmZsb3cteTogc2Nyb2xsO1xufVxuXG4ub2ZmY2FudmFzLXRpdGxlW2RhdGEtZGFyay1tb2RlPVwidHJ1ZVwiXSwgLm5hdmJhci1icmFuZFtkYXRhLWRhcmstbW9kZT1cInRydWVcIl0ge1xuICB0ZXh0LXNoYWRvdzpcbiAgICAtMXB4IC0xcHggMCAjMDAwLFxuICAgIDFweCAtMXB4IDAgIzAwMCxcbiAgICAtMXB4IDFweCAwICMwMDAsXG4gICAgMXB4IDFweCAwICMwMDA7XG59XG5cbi5vZmZjYW52YXMtdGl0bGVbZGF0YS1kYXJrLW1vZGU9XCJmYWxzZVwiXSwgLm5hdmJhci1icmFuZFtkYXRhLWRhcmstbW9kZT1cImZhbHNlXCJdIHtcbiAgdGV4dC1zaGFkb3c6XG4gICAgLTFweCAtMXB4IDAgI2ZmZixcbiAgICAxcHggLTFweCAwICNmZmYsXG4gICAgLTFweCAxcHggMCAjZmZmLFxuICAgIDFweCAxcHggMCAjZmZmO1xufVxuXG4jaXRlbS1kZXRhaWwtdmFyaWFudDpub3QoOmVtcHR5KTpiZWZvcmUge1xuICBjb250ZW50OiBcIiwgXCI7XG59XG5cbiNpdGVtLWRldGFpbC1kbGM6bm90KDplbXB0eSk6YmVmb3JlIHtcbiAgY29udGVudDogXCJGcm9tIFwiO1xuICBmb250LXdlaWdodDogaW5pdGlhbDtcbn1cblxuI2l0ZW0tZGV0YWlsLWRsYyB7XG4gIGZvbnQtd2VpZ2h0OiBib2xkO1xufVxuXG4jaXRlbS1kZXRhaWwtZGxjOm5vdCg6ZW1wdHkpOmFmdGVyIHtcbiAgY29udGVudDogXCIgRExDXCI7XG4gIGZvbnQtd2VpZ2h0OiBpbml0aWFsO1xufVxuXG4jaXRlbS1kZXRhaWwtc2tpbGw6bm90KDplbXB0eSk6YmVmb3JlIHtcbiAgY29udGVudDogXCJJbmNyZWFzZXMgMSBwb2ludCB0byBcIjtcbiAgZm9udC13ZWlnaHQ6IGluaXRpYWw7XG59XG5cbiNpdGVtLWRldGFpbC1za2lsbCB7XG4gIGZvbnQtd2VpZ2h0OiBib2xkO1xufVxuXG4jaXRlbS1kZXRhaWwtc2tpbGw6bm90KDplbXB0eSk6YWZ0ZXIge1xuICBjb250ZW50OiBcIiB1cG9uIGZpcnN0IHJlYWQqXCI7XG4gIGZvbnQtd2VpZ2h0OiBpbml0aWFsO1xufVxuXG4jaXRlbS1kZXRhaWwtc2Nob29sOm5vdCg6ZW1wdHkpOmJlZm9yZSB7XG4gIGNvbnRlbnQ6IFwiU3BlbGwgZnJvbSB0aGUgXCI7XG4gIGZvbnQtd2VpZ2h0OiBpbml0aWFsO1xufVxuXG4jaXRlbS1kZXRhaWwtc2Nob29sIHtcbiAgZm9udC13ZWlnaHQ6IGJvbGQ7XG59XG5cbiNpdGVtLWRldGFpbC1zY2hvb2w6bm90KDplbXB0eSk6YWZ0ZXIge1xuICBjb250ZW50OiBcIiBzY2hvb2xcIjtcbiAgZm9udC13ZWlnaHQ6IGluaXRpYWw7XG59XG5cbiNpdGVtLWRldGFpbC1kaWZmaWN1bHR5Om5vdCg6ZW1wdHkpOmJlZm9yZSB7XG4gIGNvbnRlbnQ6IFwiLCBcIjtcbiAgZm9udC13ZWlnaHQ6IGluaXRpYWw7XG59XG5cbiNpdGVtLWRldGFpbC1kaWZmaWN1bHR5IHtcbiAgZm9udC13ZWlnaHQ6IGJvbGQ7XG59XG5cbiNpdGVtLWRldGFpbC1kaWZmaWN1bHR5Om5vdCg6ZW1wdHkpOmFmdGVyIHtcbiAgY29udGVudDogXCIgZGlmZmljdWx0eVwiO1xuICBmb250LXdlaWdodDogaW5pdGlhbDtcbn1cblxuI2l0ZW0tZGV0YWlsLXF1ZXN0Om5vdCg6ZW1wdHkpOmJlZm9yZSB7XG4gIGNvbnRlbnQ6IFwiU3RhcnRzIHF1ZXN0IFwiO1xuICBmb250LXdlaWdodDogaW5pdGlhbDtcbn1cblxuI2l0ZW0tZGV0YWlsLXF1ZXN0IHtcbiAgZm9udC13ZWlnaHQ6IGJvbGQ7XG59XG5cbiNpdGVtLWRldGFpbC1sb2NhdGlvbjpub3QoOmVtcHR5KTpiZWZvcmUge1xuICBjb250ZW50OiBcIkxvY2F0aW9uKHMpIFwiO1xufVxuIl19 */
