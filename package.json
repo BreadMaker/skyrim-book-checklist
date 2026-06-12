@@ -34,7 +34,7 @@
   "homepage": "https://gitlab.com/breadmaker/skyrim-book-checklist#readme",
   "devDependencies": {
     "cssnano": "^7.1.2",
-    "esbuild": "^0.27.3",
+    "esbuild": "^0.28.1",
     "eslint": "^10.0.2",
     "html-minifier-next": "^5.1.4",
     "http-server": "^14.1.1",
