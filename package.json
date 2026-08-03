@@ -1,6 +1,6 @@
 {
   "name": "skyrim-book-checklist",
-  "version": "0.3.2-alpha",
+  "version": "0.3.3-alpha",
   "description": "Companion app for keeping a list of the documents you own within Skyrim.",
   "private": true,
   "main": "index.html",
@@ -42,5 +42,8 @@
     "postcss": "^8.5.25",
     "postcss-cli": "^11.0.1",
     "watch": "^0.13.0"
+  },
+  "allowScripts": {
+    "esbuild@0.28.1": true
   }
 }
